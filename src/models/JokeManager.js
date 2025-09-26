@@ -27,11 +27,11 @@ class JokeManager extends AbstractManager {
     return results[0];
   }
 
-  async createJoke(joke, response) {
+  async createJoke(joke, answer) {
     const [results] = await this.database.query(
-      `INSERT INTO ${this.table} (joke, response) VALUES (?, ?)`,
+      `INSERT INTO ${this.table} (joke, answer) VALUES (?, ?)`,
       {
-        replacements: [joke, response],
+        replacements: [joke, answer],
       }
     );
     return results;

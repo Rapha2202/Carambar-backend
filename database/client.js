@@ -18,7 +18,7 @@ const Joke = sequelize.define("joke", {
         type: Sequelize.STRING,
         allowNull: false
     },
-    response: {
+    answer: {
         type: Sequelize.STRING,
         allowNull: false
     }

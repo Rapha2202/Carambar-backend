@@ -40,16 +40,16 @@ const getRandomJoke = async (req, res) => {
 };
 
 const createJoke = async (req, res) => {
-const { joke, response } = req.body;
-    
-    if (!joke || !response) {
-        return res.status(400).json({ 
-            error: "Les champs 'joke' et 'response' sont requis" 
+const { joke, answer } = req.body;
+
+    if (!joke || !answer) {
+        return res.status(400).json({
+            error: "Les champs 'joke' et 'answer' sont requis"
         });
     }
     
     try {
-        const results = await table.joke.createJoke(joke, response);
+        const results = await table.joke.createJoke(joke, answer);
 
         console.info("Résultat de l'insertion:", results);
 
